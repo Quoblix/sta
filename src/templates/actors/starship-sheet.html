@@ -65,7 +65,8 @@
                         <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
                     </div>
                     <div class="column" style="width:10%">
-                        <input name="system.shields.max" class="field numeric-entry" type="text" value="{{system.shields.max}}"/>
+                        <input name="system.shields.max" id="max-shields" class="field numeric-entry" type="text" value="{{system.shields.max}}"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,7 +113,8 @@
                         </div>
                         <div class="track">
                             <input type="hidden" id="total-shields" name="system.shields.value" value="{{system.shields.value}}" data-dtype="Number" />
-                            <input type="hidden" id="max-shields" name="system.shields.max" value="{{system.shields.max}}" data-dtype="Number" />
+                            <!-- Commening out the following line now that we have a user input field for max-shields -->
+                            <!-- <input type="hidden" id="max-shields" name="system.shields.max" value="{{system.shields.max}}" data-dtype="Number" /> -->
                             <div id="bar-shields-renderer" class=" bar"></div>
                         </div>
                     </div>

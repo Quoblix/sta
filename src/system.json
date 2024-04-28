@@ -2,7 +2,7 @@
 	"id": "sta",
 	"title": "Star Trek Adventures Roleplaying Game",
 	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
-	"version": "1.1.11.2",
+	"version": "1.1.11.3",
 	"compatibility": {
 		"verified": "11"
 	},
@@ -51,5 +51,5 @@
 	"secondaryTokenAttribute": "determination",
 	"url": "https://github.com/quoblix/sta",
 	"manifest": "https://raw.githubusercontent.com/quoblix/sta/master/src/system.json",
-	"download": "https://github.com/Quoblix/sta/releases/latest/download/sta-v1.1.11.2.zip"
+	"download": "https://github.com/Quoblix/sta/releases/latest/download/sta-v1.1.11.3.zip"
 }

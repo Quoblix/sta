@@ -70,7 +70,7 @@
               <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
           </div>
           <div class="column" style="width:10%">
-            <input name="system.stress.max" class="field numeric-entry" type="text" value="{{system.stress.max}}" />
+            <input name="system.stress.max" id="max-stress" class="field numeric-entry" type="text" value="{{system.stress.max}}" />
         </div>
         </div>
       </div>
@@ -110,7 +110,8 @@
             </div>
             <div class="track">
               <input type="hidden" id="total-stress" name="system.stress.value" value="{{system.stress.value}}" data-dtype="Number" />
-              <input type="hidden" id="max-stress" name="system.stress.max" value="{{system.stress.max}}" data-dtype="Number" />
+              <!-- Removing this line now that max-stress is a user field -->
+              <!-- <input type="hidden" id="max-stress" name="system.stress.max" value="{{system.stress.max}}" data-dtype="Number" /> -->
               <div id="bar-stress-renderer" class=" bar"></div>
             </div>
           </div>

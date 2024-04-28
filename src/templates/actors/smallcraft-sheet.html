@@ -45,11 +45,11 @@
           <div class="column" style="width:40%">
             <input name="system.missionprofile" class="text-entry" type="text" value="{{system.missionprofile}}" placeholder="{{localize 'sta.actor.starship.missionprofile'}}" />
           </div>
-          <div class="column" style="width:60%">
+          <div class="column" style="width:50%">
             <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
           </div>
           <div class="column" style="width:10%">
-            <input name="system.shields.max" class="field numeric-entry" type="text" value="{{system.shields.max}}" placeholder="{{localize 'sta.actor.starship.shields'}}" />
+            <input name="system.shields.max" id="max-shields" class="field numeric-entry" type="text" value="{{system.shields.max}}" />
           </div>
         </div>
       </div>
@@ -97,7 +97,8 @@
             </div>
             <div class="track">
               <input type="hidden" id="total-shields" name="system.shields.value" value="{{system.shields.value}}" data-dtype="Number" />
-              <input type="hidden" id="max-shields" name="system.shields.max" value="{{system.shields.max}}" data-dtype="Number" />
+              <!-- Commenting out the following line now that max-shields is a user input field -->
+              <!-- <input type="hidden" id="max-shields" name="system.shields.max" value="{{system.shields.max}}" data-dtype="Number" /> -->
               <div id="bar-shields-renderer" class=" bar"></div>
             </div>
           </div>
