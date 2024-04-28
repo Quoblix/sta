@@ -138,16 +138,12 @@ export class STACharacterSheet extends ActorSheet {
       html.find('#bar-determination-renderer')[0].appendChild(detDiv);
     }
 
-    // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute and uses that as the max value for the stress track if no manual entry is made.
+    // This creates a dynamic Stress tracker. It polls for the value of the stress input box and sets it as the max value.
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
-
-      if (parseInt(html.find('#max-stress')[0].value) === 0) {
-        stressTrackMax = parseInt(html.find('#fitness')[0].value);
-      } else {
-        stressTrackMax = parseInt(html.find('#max-stress')[0].value);
-      }
-
+      
+      stressTrackMax = parseInt(html.find('#max-stress')[0].value);
+      
       // Clear and re-render the stress track bar
       html.find('#bar-stress-renderer').empty();
       for (let i = 1; i <= stressTrackMax; i++) {

@@ -103,14 +103,12 @@ export class STAStarshipSheet extends ActorSheet {
     let powerTrackMax = 0;
     let crewTrackMax = 0;
 
-    // This creates a dynamic Shields tracker. If the current Max Shields is zero then Max Shields Structure x 2.
+    // This creates a dynamic Shields tracker based on the shields input box.
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-      if (parseInt(html.find('#max-shields')[0].value) === 0) {
-        shieldsTrackMax = parseInt(html.find('#structure')[0].value) * 2;
-      } else {
-        shieldsTrackMax = parseInt(html.find('#max-shields')[0].value);
-      }      
+      
+      shieldsTrackMax = parseInt(html.find('#max-shields')[0].value);
+          
       html.find('#bar-shields-renderer').empty();
       for (i = 1; i <= shieldsTrackMax; i++) {
         const div = document.createElement('DIV');

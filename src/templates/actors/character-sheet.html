@@ -46,16 +46,16 @@
         <!-- Reduced the columns size and added a column for max character stress -->
         <div class="row">
           <div class="column title" style="width:30%">
-            <div> {{localize 'sta.actor.character.environment'}} </div>
+            {{localize 'sta.actor.character.environment'}} 
           </div>
           <div class="column title" style="width:30%">
-            <div> {{localize 'sta.actor.character.upbringing'}} </div>
+            {{localize 'sta.actor.character.upbringing'}}
           </div>
           <div class="column title" style="width:30%">
-              <div> {{localize 'sta.actor.character.traits'}} </div>
+            {{localize 'sta.actor.character.traits'}}
           </div>
           <div class="column title" style="width:10%">
-            <div> {{localize 'sta.actor.character.stress'}} </div>
+            {{localize 'sta.actor.character.stress'}}
         </div>
         </div>
         <!-- Reduced the columns size and added a column for max character stress -->
@@ -63,14 +63,14 @@
           <div class="column" style="width:30%">
             <input name="system.environment" class="text-entry" type="text" value="{{system.environment}}" placeholder="{{localize 'sta.actor.character.environment'}}" />
           </div>
-          <div class="column" width:30%>
+          <div class="column" style="width:30%">
             <input name="system.upbringing" class="text-entry" type="text" value="{{system.upbringing}}" placeholder="{{localize 'sta.actor.character.upbringing'}}" />
           </div>
           <div class="column" style="width:30%">
               <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
           </div>
           <div class="column" style="width:10%">
-            <input name="system.stress.max" class="text-entry" type="text" value="{{system.stress.max}}" placeholder="{{localize 'sta.actor.character.stress'}}" />
+            <input name="system.stress.max" class="field numeric-entry" type="text" value="{{system.stress.max}}" />
         </div>
         </div>
       </div>
