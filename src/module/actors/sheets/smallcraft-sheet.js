@@ -89,16 +89,13 @@ export class STASmallCraftSheet extends ActorSheet {
     let shieldsTrackMax = 0;
     let powerTrackMax = 0;
 
-    // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
-    // With the total value divided by 2, creates a new div for each and places it under a child called "bar-shields-renderer".
+    // This creates a dynamic Shields tracker. If the max shields is zero, it uses the structure value instead.
+    // Creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-      shieldsTrackMax = Math.floor((parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value))/2);
-      if (html.find('[data-talent-name="Advanced Shields"]').length > 0) {
-        shieldsTrackMax += 5;
-      }
-      // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
-      if (html.find('#max-shields')[0].value != shieldsTrackMax) {
-        html.find('#max-shields')[0].value = shieldsTrackMax;
+      if (parseInt(html.find('#max-shields')[0].value) === 0) {
+        shieldsTrackMax = parseInt(html.find('#structure')[0].value);
+      } else {
+        shieldsTrackMax = parseInt(html.find('#max-shields')[0].value);
       }
       html.find('#bar-shields-renderer').empty();
       for (i = 1; i <= shieldsTrackMax; i++) {

@@ -103,24 +103,21 @@ export class STAStarshipSheet extends ActorSheet {
     let powerTrackMax = 0;
     let crewTrackMax = 0;
 
-    // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
+    // This creates a dynamic Shields tracker. If the current Max Shields is zero then Max Shields Structure x 2.
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-      shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value);
-      if (html.find('[data-talent-name="Advanced Shields"]').length > 0) {
-        shieldsTrackMax += 5;
-      }
-      // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
-      if (html.find('#max-shields')[0].value != shieldsTrackMax) {
-        html.find('#max-shields')[0].value = shieldsTrackMax;
-      }
+      if (parseInt(html.find('#max-shields')[0].value) === 0) {
+        shieldsTrackMax = parseInt(html.find('#structure')[0].value) * 2;
+      } else {
+        shieldsTrackMax = parseInt(html.find('#max-shields')[0].value);
+      }      
       html.find('#bar-shields-renderer').empty();
       for (i = 1; i <= shieldsTrackMax; i++) {
         const div = document.createElement('DIV');
         div.className = 'box';
         div.id = 'shields-' + i;
         div.innerHTML = i;
-        div.style = 'width: calc(100% / ' + html.find('#max-shields')[0].value + ');';
+        div.style = 'width: calc(100% / ' + shieldsTrackMax + ');';
         html.find('#bar-shields-renderer')[0].appendChild(div);
       }
     }

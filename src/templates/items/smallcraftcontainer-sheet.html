@@ -15,7 +15,8 @@
               <select name="system.child">
                 {{#select system.child}}
                 {{#each availableSmallcrafts as |availableSmallcraft|}}
-                <option value="{{availableSmallcraft.id}}">{{availableSmallcraft.system.name}}</option>
+                <!-- Updating the display name to work with Foundry v11 --> 
+                <option value="{{availableSmallcraft.id}}">{{availableSmallcraft.value.name}}</option>
                 {{/each}}
                 {{/select}}
               </select>

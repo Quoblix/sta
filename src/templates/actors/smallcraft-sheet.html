@@ -28,20 +28,28 @@
             <input name="system.parent" class="text-entry" type="text" value="{{system.parent}}" placeholder="{{localize 'sta.actor.smallcraft.parent'}}" />
           </div>
         </div>
+        <!-- Adding new column with title for shields -->
         <div class="row">
           <div class="column title" style="width:40%">
             <div> {{localize 'sta.actor.starship.missionprofile'}} </div>
           </div>
-          <div class="column title" style="width:60%">
+          <div class="column title" style="width:50%">
             <div> {{localize 'sta.actor.starship.traits'}} </div>
           </div>
+          <div class="column title" style="width:10%">
+            <div> {{localize 'sta.actor.starship.shields'}} </div>
+          </div>
         </div>
+        <!-- Adding new column with input field for shields -->
         <div class="row">
           <div class="column" style="width:40%">
             <input name="system.missionprofile" class="text-entry" type="text" value="{{system.missionprofile}}" placeholder="{{localize 'sta.actor.starship.missionprofile'}}" />
           </div>
           <div class="column" style="width:60%">
             <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
+          </div>
+          <div class="column" style="width:10%">
+            <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.shields'}}" />
           </div>
         </div>
       </div>

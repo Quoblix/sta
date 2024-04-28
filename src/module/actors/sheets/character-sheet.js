@@ -138,29 +138,30 @@ export class STACharacterSheet extends ActorSheet {
       html.find('#bar-determination-renderer')[0].appendChild(detDiv);
     }
 
-    // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute, security discipline, and checks for Resolute talent. 
+    // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute and uses that as the max value for the stress track if no manual entry is made.
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
-      stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
-      if (html.find('[data-talent-name="Resolute"]').length > 0) {
-        stressTrackMax += 3;
+
+      if (parseInt(html.find('#max-stress')[0].value) === 0) {
+        stressTrackMax = parseInt(html.find('#fitness')[0].value);
+      } else {
+        stressTrackMax = parseInt(html.find('#max-stress')[0].value);
       }
-      // This checks that the max-stress hidden field is equal to the calculated Max Stress value, if not it makes it so.
-      if (html.find('#max-stress')[0].value != stressTrackMax) {
-        html.find('#max-stress')[0].value = stressTrackMax;
-      }
+
+      // Clear and re-render the stress track bar
       html.find('#bar-stress-renderer').empty();
       for (let i = 1; i <= stressTrackMax; i++) {
         const stressDiv = document.createElement('DIV');
         stressDiv.className = 'box';
         stressDiv.id = 'stress-' + i;
         stressDiv.innerHTML = i;
-        stressDiv.style = 'width: calc(100% / ' + html.find('#max-stress')[0].value + ');';
+        stressDiv.style = 'width: calc(100% / ' + stressTrackMax + ');';
         html.find('#bar-stress-renderer')[0].appendChild(stressDiv);
       }
     }
+    // Initial call to update the stress track based on current inputs
     stressTrackUpdate();
-
+    
     // This creates a dynamic Reputation tracker. For this it uses a max value of 30. This can be configured here. 
     // It creates a new div for each and places it under a child called "bar-rep-renderer"
     const repPointsMax = game.settings.get('sta', 'maxNumberOfReputation');
