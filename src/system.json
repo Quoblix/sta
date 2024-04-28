@@ -51,5 +51,6 @@
 	"secondaryTokenAttribute": "determination",
 	"url": "https://github.com/quoblix/sta",
 	"manifest": "https://raw.githubusercontent.com/quoblix/sta/master/src/system.json",
-	"download": "https://raw.githubusercontent.com/quoblix/sta/v1.1.11.1/package/sta-v1.1.11.1.zip"
+	"download": "https://github.com/Quoblix/sta/releases/latest/download/sta-v1.1.11.1.zip"
+"
 }
